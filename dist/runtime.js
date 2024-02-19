@@ -927,7 +927,7 @@ class RequestHandler {
           this.scheme.reset();
           throw new ExpiredAuthSessionError();
         }
-        isValid = await this.scheme.refreshController().then(() => true).catch(() => {
+        isValid = await this.scheme.refreshController.refreshController().then(() => true).catch(() => {
           this.scheme.reset();
           throw new ExpiredAuthSessionError();
         });
